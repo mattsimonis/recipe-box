@@ -1,0 +1,175 @@
+@font-face {
+  font-family: 'cooking-icons';
+  src:
+    url('../fonts/cooking-icons.ttf?b5d93y') format('truetype'),
+    url('../fonts/cooking-icons.woff?b5d93y') format('woff'),
+    url('../fonts/cooking-icons.svg?b5d93y#cooking-icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+i {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'cooking-icons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ci-cheese:before {
+  content: "\e900";
+}
+.ci-spoon:before {
+  content: "\e901";
+}
+.ci-apple:before {
+  content: "\e902";
+}
+.ci-banana:before {
+  content: "\e903";
+}
+.ci-bread:before {
+  content: "\e904";
+}
+.ci-buns:before {
+  content: "\e905";
+}
+.ci-carrot:before {
+  content: "\e906";
+}
+.ci-colander:before {
+  content: "\e907";
+}
+.ci-cookbook:before {
+  content: "\e908";
+}
+.ci-croissant:before {
+  content: "\e909";
+}
+.ci-cupcake:before {
+  content: "\e90a";
+}
+.ci-cuttingboard:before {
+  content: "\e90b";
+}
+.ci-eggplant:before {
+  content: "\e90c";
+}
+.ci-fish:before {
+  content: "\e90d";
+}
+.ci-fish2:before {
+  content: "\e90e";
+}
+.ci-fishfilet:before {
+  content: "\e90f";
+}
+.ci-friedegg:before {
+  content: "\e910";
+}
+.ci-fries:before {
+  content: "\e911";
+}
+.ci-garlic:before {
+  content: "\e912";
+}
+.ci-gingerbreadcookie:before {
+  content: "\e913";
+}
+.ci-ham:before {
+  content: "\e914";
+}
+.ci-hamburger:before {
+  content: "\e915";
+}
+.ci-hardboiledegg:before {
+  content: "\e916";
+}
+.ci-herbpot:before {
+  content: "\e917";
+}
+.ci-hotdog:before {
+  content: "\e918";
+}
+.ci-hotmeal:before {
+  content: "\e919";
+}
+.ci-hotsoup:before {
+  content: "\e91a";
+}
+.ci-icecreamcone:before {
+  content: "\e91b";
+}
+.ci-jar:before {
+  content: "\e91c";
+}
+.ci-kebab:before {
+  content: "\e91d";
+}
+.ci-measuringcup:before {
+  content: "\e91e";
+}
+.ci-muffin:before {
+  content: "\e91f";
+}
+.ci-mushroom:before {
+  content: "\e920";
+}
+.ci-mushroom2:before {
+  content: "\e921";
+}
+.ci-orangeslice:before {
+  content: "\e922";
+}
+.ci-pizza:before {
+  content: "\e923";
+}
+.ci-pot:before {
+  content: "\e924";
+}
+.ci-recipe:before {
+  content: "\e925";
+}
+.ci-saltshaker:before {
+  content: "\e926";
+}
+.ci-sausage:before {
+  content: "\e927";
+}
+.ci-servingplatter:before {
+  content: "\e928";
+}
+.ci-spatula:before {
+  content: "\e929";
+}
+.ci-steak:before {
+  content: "\e92a";
+}
+.ci-sundae:before {
+  content: "\e92b";
+}
+.ci-taco:before {
+  content: "\e92c";
+}
+.ci-tomato:before {
+  content: "\e92d";
+}
+.ci-tropicaldrink:before {
+  content: "\e92e";
+}
+.ci-turkey:before {
+  content: "\e92f";
+}
+.ci-watermelon:before {
+  content: "\e930";
+}
+.ci-whisk:before {
+  content: "\e931";
+}

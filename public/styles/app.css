@@ -1,0 +1,24 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.logo {
+  padding: 1.4rem;
+  display: flex;
+  justify-content: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+  font-family: 'Playfair Display';
+}
+
+.logo > i {
+  font-size: 2.6rem;
+  height: 2.6rem;
+  width: 2.6rem;
+  margin-right: 1rem;
+}
+
+.card.recipe .title {
+  font-weight: 700;
+  font-family: 'Playfair Display';
+}

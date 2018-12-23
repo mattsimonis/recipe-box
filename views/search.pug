@@ -1,0 +1,14 @@
+extends ./layout.pug
+
+block body
+  div.container
+    div.columns.is-multiline
+      each recipe in recipes
+        div.column.is-one-quarter
+          div.card.recipe
+            if recipe.data.image
+              div.card-image
+                a.image.is-4by3(href='/recipe/' + recipe.uid)
+                  img(src=recipe.data.image.url)
+            div.card-content
+              a.title.is-4(href='/recipe/' + recipe.uid)= PrismicDOM.RichText.asText(recipe.data.name)

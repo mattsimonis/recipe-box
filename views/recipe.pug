@@ -1,0 +1,10 @@
+extends ./layout.pug
+
+block variables
+  title= PrismicDOM.RichText.asText(document.data.name)
+
+block body
+  div.container.recipe
+    if document.data.image
+      img(src=document.data.image.url, class='recipe-image')
+    div.name= PrismicDOM.RichText.asText(document.data.name)

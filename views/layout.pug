@@ -1,0 +1,25 @@
+doctype html(lang='en')
+
+block variables
+
+head
+  - var title = title || "Test Site"
+  title #{title}
+  link(rel="stylesheet", href="/styles/app.css")
+  link(rel="stylesheet", href="/styles/cooking-icons.css")
+  link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css")
+  link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i|Playfair+Display:700")
+  meta(name="viewport", content="width=device-width, initial-scale=1")
+
+  // Required for Previews and Experiments
+  script
+    = ctx?"window.prismic = { endpoint: '" + ctx.endpoint + "' };":""
+  script(src="//static.cdn.prismic.io/prismic.min.js")
+
+body
+  div.container
+    div.container
+      div.logo
+        i(class='ci-' + homepage.data.icon)
+        span.name= PrismicDOM.RichText.asText(homepage.data.title)
+      block body
