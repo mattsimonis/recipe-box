@@ -50,7 +50,7 @@ app.route('/recipe/:uid').get((req, res) => {
 });
 
 app.route('/search').get((req, res) => {
-  const q = req.query.q;
+  const { q } = req.query;
   if (!q) {
     const recipes = [];
     res.render('search', { recipes, q });
@@ -67,9 +67,9 @@ app.route('/search').get((req, res) => {
 });
 
 app.route('/tag/:tag').get((req, res) => {
-  const tag = req.params.tag;
+  const { tag } = req.params;
   req.prismic.api.query(
-    Prismic.Predicates.at('document.tags', [tag])
+    Prismic.Predicates.at('document.tags', [tag]),
   ).then((response) => {
     const recipes = response.results;
     res.render('tag', { recipes, tag });

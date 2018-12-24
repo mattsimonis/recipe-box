@@ -2,6 +2,15 @@
 
 >  Recipe app with content managed in [Prismic](https://prismic.io/) headless API CMS.
 
+## Features
+
+- CMS powered by [Prismic](https://prismic.io/).
+- Search by title.
+- Tag search.
+- CSS framework powered by [Bulma](https://bulma.io/).
+
+Demo: [https://secret-citadel-18285.herokuapp.com/](https://secret-citadel-18285.herokuapp.com/)
+
 ## Requirements
 
 - Node.js v11+
