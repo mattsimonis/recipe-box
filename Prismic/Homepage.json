@@ -1,0 +1,37 @@
+{
+  "Main" : {
+    "icon" : {
+      "type" : "Select",
+      "config" : {
+        "options" : [ "apple", "banana", "bread", "buns", "carrot", "cheese", "colander", "cookbook", "croissant", "cupcake", "cuttingboard", "eggplant", "fish", "fish2", "fishfilet", "friedegg", "fries", "garlic", "gingerbreadcookie", "ham", "hamburger", "hardboiledegg", "herbpot", "hotdog", "hotmeal", "hotsoup", "icecreamcone", "jar", "kebab", "measuringcup", "muffin", "mushroom", "mushroom2", "orangeslice", "pizza", "pot", "recipe", "saltshaker", "sausage", "servingplatter", "spatula", "spoon", "steak", "sundae", "taco", "tomato", "tropicaldrink", "turkey", "watermelon", "whisk" ],
+        "default_value" : "apple",
+        "label" : "Icon"
+      }
+    },
+    "title" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "heading1",
+        "label" : "Title",
+        "placeholder" : "The Cookie Corner"
+      }
+    },
+    "subtitle" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "heading3",
+        "label" : "Subtitle",
+        "placeholder" : "My favorite cookie recipes"
+      }
+    },
+    "description" : {
+      "type" : "StructuredText",
+      "config" : {
+        "multi" : "paragraph, strong, em, hyperlink, image, list-item, o-list-item",
+        "allowTargetBlank" : true,
+        "label" : "Description",
+        "placeholder" : "I love cookies. This collection contains my most favorite cookie recipes! 🤤🍪"
+      }
+    }
+  }
+}
