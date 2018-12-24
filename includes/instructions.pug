@@ -1,3 +1,3 @@
 each instruction, index in recipe.data.instructions
-  h4.step-title= 'Step ' + (index + 1)
+  h4.step-title= "Step " + (index + 1)
   p.step!= PrismicDOM.RichText.asHtml(instruction.step, ctx.linkResolver)

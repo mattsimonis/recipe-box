@@ -2,14 +2,14 @@ div.nav-columns
   div.container.is-fluid
     nav.columns.is-vertically-centered
       div.column.is-one-half.is-offset-one-quarter
-        a.logo(href='/')
+        a.logo(href="/")
           span.icon
             svg
-              use(xlink:href='/images/cooking-icons.svg#' + homepage.data.icon)
+              use(xlink:href="/images/cooking-icons.svg#" + homepage.data.icon)
           span.name= PrismicDOM.RichText.asText(homepage.data.title)
       div.column.is-one-quarter.navbar-search
-        form(action='/search', method='get')
+        form(action="/search", method="get")
           p.control.has-icons-right
-            input.input(name='q')
+            input.input(name="q")
             span.icon.is-small.is-right
               include /images/search.svg

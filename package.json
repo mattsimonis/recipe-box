@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "body-parser": "^1.18.3",
+    "bulma": "^0.7.2",
     "compression": "^1.7.3",
     "debug": "^4.1.1",
     "errorhandler": "^1.5.0",
