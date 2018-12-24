@@ -16,16 +16,18 @@ app.use((req, res, next) => {
     endpoint: PrismicConfig.apiEndpoint,
     linkResolver: PrismicConfig.linkResolver,
   };
-  
+
   // Add PrismicDOM in locals to access them in templates.
   res.locals.PrismicDOM = PrismicDOM;
 
-  // Get the Homepage for access in all templates.
+  // Set up prismic api.
   Prismic.api(PrismicConfig.apiEndpoint, {
     accessToken: PrismicConfig.accessToken,
     req,
   }).then((api) => {
     req.prismic = { api };
+
+    // Get the Homepage for access in all templates.
     api.getSingle('homepage')
       .then((document) => {
         res.locals.homepage = document;
