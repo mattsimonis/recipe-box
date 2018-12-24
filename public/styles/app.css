@@ -4,7 +4,7 @@ html {
 }
 
 body {
-  height: 100%;
+  min-height: 100%;
   font-family: 'Playfair Display', serif;
   background-color: #f5f5f5;
 }
@@ -12,14 +12,6 @@ body {
 html, body {
   overflow: auto;
   -webkit-overflow-scrolling: touch;
-}
-
-.main-content hr {
-  background-color: #efefef;
-  border: none;
-  display: block;
-  height: 2px;
-  margin: 1.5rem 0;
 }
 
 .columns.is-vertically-centered {
@@ -73,12 +65,16 @@ html, body {
   padding-top: 2rem;
 }
 
-h1.title {
-  font-size: 4rem;
-  font-weight: 400;
+.main-content hr {
+  background-color: #efefef;
+  border: none;
+  display: block;
+  height: 2px;
+  margin: 1.5rem 0;
 }
 
-.tile {
+h1.title {
+  font-size: 4rem;
   font-weight: 400;
 }
 
@@ -116,6 +112,12 @@ h1.title {
   width: 60%;
   background: #fff;
   padding: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .recipe-name .title {
+    width: 100%;
+  }
 }
 
 .recipe-detail {
