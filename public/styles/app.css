@@ -1,5 +1,56 @@
+html {
+  height: 100%;
+  min-height: 100%;
+}
+
 body {
-  font-family: 'Open Sans', sans-serif;
+  height: 100%;
+  font-family: 'Playfair Display', serif;
+  background-color: #f5f5f5;
+}
+
+html, body {
+  overflow: auto;
+}
+
+.main-content hr {
+  background-color: #efefef;
+  border: none;
+  display: block;
+  height: 2px;
+  margin: 1.5rem 0;
+}
+
+.columns.is-vertically-centered {
+  align-items: center;
+}
+
+@media screen and (max-width: 1087px) {
+  .container.is-fluid {
+    margin-left: 32px;
+    margin-right: 32px;
+    max-width: none;
+    width: auto;
+  }
+}
+
+.nav-columns {
+  background: #fff;
+  box-shadow: 0 2px 0 0 #efefef;
+  color: #0a0a0a;
+}
+
+.navbar-search form {
+  margin: 0;
+}
+
+.icon.is-small svg {
+  height: 14px;
+  max-width: 14px;
+}
+
+.nav-columns a {
+  color: #0a0a0a;
 }
 
 .logo {
@@ -8,7 +59,6 @@ body {
   justify-content: center;
   font-size: 1.6rem;
   font-weight: 700;
-  font-family: 'Playfair Display';
 }
 
 .logo > i {
@@ -18,7 +68,85 @@ body {
   margin-right: 1rem;
 }
 
-.card.recipe .title {
+.main-content {
+  padding-top: 2rem;
+}
+
+h1.title {
+  font-size: 4rem;
+  font-weight: 400;
+}
+
+.tile {
+  font-weight: 400;
+}
+
+.tile .title {
+  font-family: 'Open Sans', sans-serif;
   font-weight: 700;
-  font-family: 'Playfair Display';
+  color: #aaa;
+  font-size: .8rem;
+  letter-spacing: .08rem;
+  text-transform: uppercase;
+}
+
+.card.recipe .title {
+  display: block;
+  margin-bottom: .8rem;
+}
+
+.recipe-name {
+  position: relative;
+  overflow: hidden;
+  background-position: center center;
+  background-size: 500px;
+  background-color: #1c2023;
+}
+
+.recipe-name.has-image {
+  background-size: cover;
+}
+
+.recipe-name > .hero-body {
+  margin-top: 4rem;
+}
+
+.recipe-name .title {
+  width: 60%;
+  background: #fff;
+  padding: 1rem;
+}
+
+.recipe-detail {
+  background: #fff;
+  padding: 1.25rem;
+  display: block;
+  box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
+  color: #4a4a4a;
+}
+
+.serving-size {
+  font-weight: 700;
+}
+
+ul.ingredients {
+  list-style: none;
+  margin-left: 0;
+}
+
+ul.ingredients li {
+  margin-bottom: 1rem;
+}
+
+span.query {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+
+p.no-results {
+  font-size: 1.6rem;
+}
+
+p.no-results i {
+  margin-right: .8rem;
 }

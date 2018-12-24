@@ -1,8 +1,8 @@
 extends ./layout.pug
 
 block body
-  p.title= 'Search results for: '
-    span.query= q
+  p.title= 'Recipes tagged with: '
+    span.query= tag
   hr
   if recipes.length > 0
     div.columns.is-multiline
