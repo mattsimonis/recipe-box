@@ -58,8 +58,10 @@ Once you have your homepage, you can begin adding recipes which will appear in y
 
 ## App Configuration
 
-To connect the node app to your repository, you'll have to edit `prismic-configuration.js`.
+Create a `.env` file for your local configuration. This file is in the `.gitignore`, so it won't be committed.
 
-```javascript
-apiEndpoint: 'https://your-repository-name.prismic.io/api/v2',
+```bash
+echo "PRISMIC_REPOSITORY=your-repository-name" > .env
 ```
+
+If you deploy your app to Heroku, you can set this via Config Vars.
