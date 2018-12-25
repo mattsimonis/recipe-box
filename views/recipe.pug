@@ -9,7 +9,7 @@ block body
     div.hero-body
       div.container
         h1.title= PrismicDOM.RichText.asText(recipe.data.name)
-  div.recipe-detail
+  article.recipe-detail(data-wio-id=recipe.id)
     div.tile.is-ancestor
       div.tile.is-parent
         article.tile.is-child

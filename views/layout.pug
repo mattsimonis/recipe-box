@@ -10,6 +10,11 @@ html(lang="en")
     link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i|Playfair+Display:400,700")
     link(rel="stylesheet", href="/styles/app.css")
     meta(name="viewport", content="width=device-width, initial-scale=1")
+
+    // Required for Previews and Experiments
+    script
+      = ctx ? "window.prismic = { endpoint: '" + ctx.endpoint + "' };" : ""
+    script(src="//static.cdn.prismic.io/prismic.min.js")
   body
     include ../includes/navbar.pug
 

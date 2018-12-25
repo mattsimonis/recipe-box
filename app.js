@@ -38,6 +38,9 @@ app.use((req, res, next) => {
   });
 });
 
+/*
+ * Home route.
+ */
 app.route('/').get((req, res) => {
   req.prismic.api.query(
     Prismic.Predicates.at('document.type', 'recipe'),
@@ -48,12 +51,18 @@ app.route('/').get((req, res) => {
   });
 });
 
+/*
+ * Recipe detail reoute.
+ */
 app.route('/recipe/:uid').get((req, res) => {
   req.prismic.api.getByUID('recipe', req.params.uid).then((recipe) => {
     res.render('recipe', { recipe });
   });
 });
 
+/*
+ * Search route.
+ */
 app.route('/search').get((req, res) => {
   const { q } = req.query;
   if (!q) {
@@ -71,6 +80,9 @@ app.route('/search').get((req, res) => {
   });
 });
 
+/*
+ * Tag route.
+ */
 app.route('/tag/:tag').get((req, res) => {
   const { tag } = req.params;
   req.prismic.api.query(
@@ -79,4 +91,20 @@ app.route('/tag/:tag').get((req, res) => {
     const recipes = response.results;
     res.render('tag', { recipes, tag });
   });
+});
+
+/*
+ * Preconfigured prismic preview.
+ */
+app.get('/preview', (req, res) => {
+  const { token } = req.query;
+  if (token) {
+    req.prismic.api.previewSession(token, PrismicConfig.linkResolver, '/').then((url) => {
+      res.redirect(302, url);
+    }).catch((err) => {
+      res.status(500).send(`Error 500 in preview: ${err.message}`);
+    });
+  } else {
+    res.send(400, 'Missing token from querystring');
+  }
 });

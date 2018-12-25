@@ -14,6 +14,11 @@ html, body {
   -webkit-overflow-scrolling: touch;
 }
 
+/* Prismic edit link */
+.wio-link {
+  float: right;
+}
+
 .columns.is-vertically-centered {
   align-items: center;
 }
