@@ -1,13 +1,12 @@
 const Prismic = require('prismic-javascript');
 const PrismicDOM = require('prismic-dom');
-const request = require('request');
 const PrismicConfig = require('./prismic-configuration');
 const app = require('./config');
 
 const PORT = app.get('port');
 
 app.listen(PORT, () => {
-  process.stdout.write(`Point your browser to: http://localhost:${PORT}\n`);
+  process.stdout.write(`App listening on port ${PORT}\n`);
 });
 
 // Middleware to inject prismic context.
@@ -38,9 +37,7 @@ app.use((req, res, next) => {
   });
 });
 
-/*
- * Home route.
- */
+// Home route.
 app.route('/').get((req, res) => {
   req.prismic.api.query(
     Prismic.Predicates.at('document.type', 'recipe'),
@@ -51,18 +48,14 @@ app.route('/').get((req, res) => {
   });
 });
 
-/*
- * Recipe detail reoute.
- */
+// Recipe detail reoute.
 app.route('/recipe/:uid').get((req, res) => {
   req.prismic.api.getByUID('recipe', req.params.uid).then((recipe) => {
     res.render('recipe', { recipe });
   });
 });
 
-/*
- * Search route.
- */
+// Search route.
 app.route('/search').get((req, res) => {
   const { q } = req.query;
   if (!q) {
@@ -80,9 +73,7 @@ app.route('/search').get((req, res) => {
   });
 });
 
-/*
- * Tag route.
- */
+// Tag route.
 app.route('/tag/:tag').get((req, res) => {
   const { tag } = req.params;
   req.prismic.api.query(
@@ -93,9 +84,7 @@ app.route('/tag/:tag').get((req, res) => {
   });
 });
 
-/*
- * Preconfigured prismic preview.
- */
+// Preconfigured prismic preview.
 app.get('/preview', (req, res) => {
   const { token } = req.query;
   if (token) {

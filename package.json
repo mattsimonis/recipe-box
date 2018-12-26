@@ -15,12 +15,9 @@
     "dotenv": "^6.2.0",
     "errorhandler": "^1.5.0",
     "express": "^4.16.4",
-    "method-override": "^3.0.0",
-    "morgan": "^1.9.1",
     "prismic-dom": "^2.1.0",
     "prismic-javascript": "^2.0.1",
     "pug": "^2.0.3",
-    "request": "^2.88.0",
     "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
@@ -31,7 +28,16 @@
     "nodemon": "^1.18.9"
   },
   "engines": {
-    "node": "11.x",
+    "node": "10.x",
     "npm": "6.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mattsimonis/recipe-box.git"
+  },
+  "author": "Matt Simonis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mattsimonis/recipe-box/issues"
   }
 }
