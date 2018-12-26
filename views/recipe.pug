@@ -2,7 +2,7 @@ extends ./layout.pug
 
 block variables
   title= PrismicDOM.RichText.asText(recipe.data.name)
-  - var recipeImageUrl = recipe.data.image.url ? recipe.data.image.url : "/images/recipe_background.png";
+  - var recipeImageUrl = recipe.data.image.url ? recipe.data.image.url : "/images/background.png";
 
 block body
   div.hero.recipe-name(class=(recipe.data.image.url ? "has-image" : ""), style={"background-image": "url(" + recipeImageUrl + ")"})

@@ -17,6 +17,14 @@ module.exports = (() => {
   app.use(express.static(path.join(__dirname, 'public'), { maxage: '7d' }));
   app.use('/bulma', express.static(path.join(__dirname, 'node_modules/bulma/css/'), { maxage: '7d' }));
 
+  if (process.env.HTTPS === 'true') {
+    app.use((req, res) => {
+      if (!req.secure) {
+        res.redirect('https://' + req.headers.host + req.url);
+      }
+    });
+  }
+
   app.locals.basedir = path.join(__dirname, 'public');
 
   return app;
