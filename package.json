@@ -1,11 +1,32 @@
 {
   "name": "recipe-box",
   "version": "0.0.1",
+  "description": "Recipe app with content managed in Prismic headless API CMS.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mattsimonis/recipe-box.git"
+  },
+  "author": "Matt Simonis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mattsimonis/recipe-box/issues"
+  },
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
     "lint": "eslint *.js",
     "test": "node -c *.js"
+  },
+  "engines": {
+    "node": "10.x",
+    "npm": "6.x"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.11.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "nodemon": "^1.18.9"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
@@ -19,25 +40,5 @@
     "prismic-javascript": "^2.0.1",
     "pug": "^2.0.3",
     "serve-favicon": "^2.5.0"
-  },
-  "devDependencies": {
-    "babel-eslint": "^10.0.1",
-    "eslint": "^5.11.0",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.14.0",
-    "nodemon": "^1.18.9"
-  },
-  "engines": {
-    "node": "10.x",
-    "npm": "6.x"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/mattsimonis/recipe-box.git"
-  },
-  "author": "Matt Simonis",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/mattsimonis/recipe-box/issues"
   }
 }
