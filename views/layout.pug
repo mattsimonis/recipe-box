@@ -14,7 +14,7 @@ html(lang="en")
     // Required for Previews and Experiments
     script
       = ctx ? "window.prismic = { endpoint: '" + ctx.endpoint + "' };" : ""
-    script(src="//static.cdn.prismic.io/prismic.min.js")
+    script(async, src="//static.cdn.prismic.io/prismic.min.js")
   body
     include ../includes/navbar.pug
 
