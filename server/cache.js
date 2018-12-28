@@ -20,9 +20,9 @@ module.exports = {
         res.send = (body) => {
           client.set(viewKey, body, { expires: 3600 }, (err, val) => {
             if (err) {
-              console.log(`error setting cache for ${viewKey}`);
+              process.stdout.write(`error setting cache for ${viewKey}\n`);
             } else {
-              console.log(`cache set for ${viewKey}`);
+              process.stdout.write(`cache set for ${viewKey}\n`);
             }
           });
           res.sendRes(body);
