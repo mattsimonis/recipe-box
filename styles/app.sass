@@ -1,0 +1,136 @@
+@charset "utf-8"
+
+@import "../node_modules/bulma/bulma.sass"
+
+html
+  height: 100%
+  min-height: 100%
+
+body
+  min-height: 100%
+  font-family: 'Noto Serif', serif
+  background-color: #f5f5f5
+
+html, body
+  overflow: auto
+  -webkit-overflow-scrolling: touch
+
+/* Prismic edit link */
+.wio-link
+  float: right
+
+.columns.is-vertically-centered
+  align-items: center
+
+@media screen and (max-width: 1087px)
+  .container.is-fluid
+    margin-left: 32px
+    margin-right: 32px
+    max-width: none
+    width: auto
+
+.nav-columns
+  background: #fff
+  box-shadow: 0 2px 0 0 #efefef
+  color: #0a0a0a
+
+.navbar-search form
+  margin: 0
+
+.icon.is-small svg
+  height: 14px
+  max-width: 14px
+
+.nav-columns a
+  color: #0a0a0a
+
+.logo
+  padding: 1.4rem
+  display: flex
+  justify-content: center
+  font-size: 1.6rem
+  font-weight: 700
+  > .icon
+    height: 2.6rem
+    width: 2.6rem
+    margin-right: 1rem
+
+.main-content
+  padding-top: 2rem
+  hr
+    background-color: #efefef
+    border: none
+    display: block
+    height: 2px
+    margin: 1.5rem 0
+
+h1.title
+  font-size: 4rem
+  font-weight: 400
+  span.author
+    display: block
+    font-size: 1rem
+    font-style: italic
+    margin-top: .6rem
+
+.tile .title
+  font-family: 'Open Sans', sans-serif
+  font-weight: 700
+  color: #aaa
+  font-size: .8rem
+  letter-spacing: .08rem
+  text-transform: uppercase
+
+.card.recipe .title
+  display: block
+  margin-bottom: .8rem
+
+.recipe-name
+  position: relative
+  overflow: hidden
+  background-position: center center
+  background-size: 500px
+  background-color: #1c2023
+  &.has-image
+    background-size: cover
+  > .hero-body
+    margin-top: 4rem
+  .title
+    width: 60%
+    background: #fff
+    padding: 1rem
+
+@media screen and (max-width: 768px)
+  .recipe-name .title
+    width: 100%
+
+.recipe-detail
+  background: #fff
+  padding: 1.25rem
+  display: block
+  box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1)
+  color: #4a4a4a
+
+.serving-size
+  font-weight: 700
+  color: #3eac8a
+
+.note
+  font-style: italic
+  font-weight: 700
+  color: #3eac8a
+
+ul.ingredients
+  list-style: none
+  margin-left: 0
+  li
+    margin-bottom: 1rem
+
+span.query
+  font-family: 'Open Sans', sans-serif
+  font-weight: 400
+
+p.no-results
+  font-size: 1.6rem
+  i
+    margin-right: .8rem
