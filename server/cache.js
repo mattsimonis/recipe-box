@@ -18,6 +18,7 @@ module.exports = {
         }
         res.sendRes = res.send;
         res.send = (body) => {
+          process.stdout.write(`setting cache for ${viewKey}\n`);
           client.set(viewKey, body, 3600, (err) => {
             if (err) {
               process.stdout.write(`error setting cache for ${viewKey}\n`);
