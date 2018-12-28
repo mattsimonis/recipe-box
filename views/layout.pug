@@ -11,10 +11,11 @@ html(lang="en")
     link(rel="stylesheet", href="/styles/app.css")
     meta(name="viewport", content="width=device-width, initial-scale=1")
 
-    // Required for Previews and Experiments
-    script
-      = ctx ? "window.prismic = { endpoint: '" + ctx.endpoint + "' };" : ""
-    script(async, src="//static.cdn.prismic.io/prismic.min.js")
+    if AllowPreview
+      // Required for Previews and Experiments
+      script
+        = ctx ? "window.prismic = { endpoint: '" + ctx.endpoint + "' };" : ""
+      script(async, src="//static.cdn.prismic.io/prismic.min.js")
   body
     include ../includes/navbar.pug
 
