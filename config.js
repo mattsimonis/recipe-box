@@ -14,8 +14,8 @@ module.exports = (() => {
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: false }));
   app.use(compression());
-  app.use(express.static(path.join(__dirname, 'public'), { maxage: '7d' }));
-  app.use('/bulma', express.static(path.join(__dirname, 'node_modules/bulma/css/'), { maxage: '7d' }));
+  app.use(express.static(path.join(__dirname, 'public'), { maxage: '1d' }));
+  app.use('/bulma', express.static(path.join(__dirname, 'node_modules/bulma/css/'), { maxage: '1d' }));
 
   app.locals.basedir = path.join(__dirname, 'public');
 
