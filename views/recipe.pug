@@ -9,7 +9,7 @@ block body
     div.hero-body
       div.container
         h1.title= PrismicDOM.RichText.asText(recipe.data.name)
-          if recipe.data.author
+          if recipe.data.author && recipe.data.author.length > 0
             span.author!= `Author: ${recipe.data.author}`
   article.recipe-detail(data-wio-id=recipe.id)
     div.tile.is-ancestor
@@ -25,10 +25,10 @@ block body
         div.tile.is-parent
           article.tile.is-child
             div.content
-              if recipe.data.description
+              if recipe.data.description && recipe.data.description.length > 0
                 p.title= "Description"
                 != PrismicDOM.RichText.asHtml(recipe.data.description, ctx.linkResolver)
-              if recipe.data.note
+              if recipe.data.note && recipe.data.note.length > 0
                 p.note= `Note: ${recipe.data.note}`
               p.title= "Method"
               div.content
