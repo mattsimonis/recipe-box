@@ -5,7 +5,6 @@ const app = require('../config');
 const cache = require('./cache');
 
 const ALLOW_PREVIEW = process.env.PRISMIC_PREVIEW === 'true';
-const CACHE_VIEWS = process.env.CACHE_VIEWS === 'true';
 const WEBHOOK_SECRET = process.env.PRISMIC_WEBHOOK_SECRET;
 
 module.exports = (() => {
@@ -30,19 +29,25 @@ module.exports = (() => {
       req.prismic = { api };
 
       // Get the Homepage for access in all templates.
-      api.getSingle('homepage')
-        .then((document) => {
-          res.locals.homepage = document;
+      cache.getContent('homepage').then((homepage) => {
+        if (homepage) {
+          res.locals.homepage = homepage;
           next();
-        });
+        } else {
+          api.getSingle('homepage')
+            .then((document) => {
+              cache.setContent('homepage', document);
+              res.locals.homepage = document;
+              next();
+            });
+        }
+      });
     }).catch((error) => {
       next(error.message);
     });
   });
 
-  if (CACHE_VIEWS) {
-    cache.cacheViews(app);
-  }
+  cache.cacheViews(app);
 
   // Home route.
   app.route('/').get((req, res) => {

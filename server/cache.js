@@ -38,5 +38,35 @@ module.exports = {
     }
 
     client.flush();
+  },
+
+  getContent(key) {
+    return new Promise((resolve, reject) => {
+      if (!client) {
+        resolve(null);
+      }
+  
+      client.get(key, (err, value) => {
+        if (err == null && value != null) {
+          resolve(value);
+        } else {
+          resolve(null);
+        }
+      });
+    });
+  },
+
+  setContent(key, document) {
+    if (!client) {
+      return;
+    }
+
+    client.set(key, document, 3600, (err) => {
+      if (err) {
+        process.stdout.write(`error setting cache for ${key}\n`);
+      } else {
+        process.stdout.write(`cache set for ${key}\n`);
+      }
+    });
   }
 }
