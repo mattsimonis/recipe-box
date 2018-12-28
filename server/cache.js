@@ -1,7 +1,7 @@
-const memjs = require('memjs');
+const memcached = require('memcached');
 
-const client = process.env.CACHE_VIEWS === 'true' ?
-    memjs.Client.create() : null;
+const server = process.env.MEMCACHE_SERVERS;
+const client = server ? new memcached(server) : null;
 
 module.exports = {
   cacheViews(app) {
@@ -18,7 +18,7 @@ module.exports = {
         }
         res.sendRes = res.send;
         res.send = (body) => {
-          client.set(viewKey, body, { expires: 3600 }, (err, val) => {
+          client.set(viewKey, body, 3600, (err) => {
             if (err) {
               process.stdout.write(`error setting cache for ${viewKey}\n`);
             } else {
