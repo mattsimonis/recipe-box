@@ -1,5 +1,7 @@
 @charset "utf-8"
 
+$primary: #3eac8a !default
+
 @import "../node_modules/bulma/bulma.sass"
 
 html
@@ -37,9 +39,29 @@ html, body
 .navbar-search form
   margin: 0
 
-.icon.is-small svg
-  height: 14px
-  max-width: 14px
+.icon
+  &.is-small
+    svg
+      height: 1rem
+      max-width: 1rem
+  &.has-text-primary
+    svg
+      fill: $primary
+  svg.inline-icon
+    display: inline-block
+    font-size: inherit
+    height: 1.5rem
+    overflow: visible
+    vertical-align: -.125em
+    &.is-small
+      height: 1rem
+      max-width: 1rem
+    &.is-medium
+      height: 2rem
+      max-width: 2rem
+    &.is-large
+      height: 3rem
+      max-width: 3rem
 
 .nav-columns a
   color: #0a0a0a
@@ -113,12 +135,15 @@ h1.title
 
 .serving-size
   font-weight: 700
-  color: #3eac8a
 
 .note
   font-style: italic
   font-weight: 700
-  color: #3eac8a
+
+.oven-temp
+  .icon
+    margin-right: .4rem
+    display: inline-block
 
 ul.ingredients
   list-style: none

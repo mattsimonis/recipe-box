@@ -17,7 +17,13 @@ block body
         article.tile.is-child
           div.content
             if recipe.data.serving_size
-              p.serving-size= recipe.data.serving_size
+              p.serving-size.has-text-primary= recipe.data.serving_size
+            if recipe.data.oven_temperature
+              p.oven-temp
+                span.icon.is-small
+                  svg.inline-icon.is-small
+                    use(xlink:href="/images/cooking-icons.svg#oven")
+                span= `${recipe.data.oven_temperature}°`
             p.title= "Ingredients"
             div.content
               include ../includes/ingredients.pug
@@ -29,7 +35,7 @@ block body
                 p.title= "Description"
                 != PrismicDOM.RichText.asHtml(recipe.data.description, ctx.linkResolver)
               if recipe.data.note && recipe.data.note.length > 0
-                p.note= `Note: ${recipe.data.note}`
+                p.note.has-text-primary= `Note: ${recipe.data.note}`
               p.title= "Method"
               div.content
                 include ../includes/instructions.pug

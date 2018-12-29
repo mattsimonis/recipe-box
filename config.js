@@ -4,6 +4,8 @@ const sassMiddleware = require('node-sass-middleware');
 const compression = require('compression');
 const path = require('path');
 
+const maxage = process.env.NODE_ENV === 'production' ? '1d' : 0;
+
 module.exports = (() => {
   const app = express();
 
@@ -16,12 +18,11 @@ module.exports = (() => {
     dest: path.join(__dirname, 'public'),
     indentedSyntax: true,
     outputStyle: 'compressed',
-    maxAge: 86400,
   }));
   app.use(express.json());
   app.use(express.urlencoded({ extended: false }));
   app.use(compression());
-  app.use(express.static(path.join(__dirname, 'public'), { maxage: '1d' }));
+  app.use(express.static(path.join(__dirname, 'public'), { maxage: maxage }));
 
   app.locals.basedir = path.join(__dirname, 'public');
 
