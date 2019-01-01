@@ -51,36 +51,61 @@
         "label" : "Serving Size",
         "placeholder" : "Makes 12 cookies"
       }
+    },
+    "oven_temperature" : {
+      "type" : "Number",
+      "config" : {
+        "label" : "Oven Temperature",
+        "placeholder" : "350"
+      }
     }
   },
   "Ingredients" : {
-    "ingredients" : {
-      "type" : "Group",
+    "body" : {
+      "type" : "Slices",
+      "fieldset" : "Slice zone",
       "config" : {
-        "fields" : {
-          "quantity" : {
-            "type" : "Text",
-            "config" : {
-              "label" : "Quantity",
-              "placeholder" : "4"
-            }
-          },
-          "measurement" : {
-            "type" : "Text",
-            "config" : {
-              "label" : "Measurement",
-              "placeholder" : "cups"
-            }
-          },
-          "ingredient" : {
-            "type" : "Text",
-            "config" : {
-              "label" : "Ingredient",
-              "placeholder" : "flour"
+        "choices" : {
+          "ingredients_group" : {
+            "type" : "Slice",
+            "fieldset" : "Ingredients Group",
+            "description" : "A grouping of ingredients with optional title.",
+            "icon" : "receipt",
+            "display" : "list",
+            "non-repeat" : {
+              "heading" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Heading",
+                  "placeholder" : "Dough"
+                }
+              }
+            },
+            "repeat" : {
+              "quantity" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Quantity",
+                  "placeholder" : "4"
+                }
+              },
+              "measurement" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Measurement",
+                  "placeholder" : "cups"
+                }
+              },
+              "ingredient" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Ingredient",
+                  "placeholder" : "flour"
+                }
+              }
             }
           }
-        },
-        "label" : "Ingredients"
+        }
       }
     }
   },
