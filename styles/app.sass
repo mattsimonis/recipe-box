@@ -2,7 +2,8 @@
 
 $primary: #3eac8a !default
 
-@import "../node_modules/bulma/bulma.sass"
+@import ../node_modules/bulma/bulma.sass
+@import extensions/collapsible.sass
 
 html
   height: 100%
@@ -10,28 +11,20 @@ html
 
 body
   min-height: 100%
-  font-family: 'Crimson Text', serif
+  font-family: "Crimson Text", serif
   font-size: 1.3rem
-  line-height: 2.4rem
+  line-height: 2rem
   background-color: #f5f5f5
-
-html, body
-  overflow: auto
+  overflow-x: hidden
+  overflow-y: auto
   -webkit-overflow-scrolling: touch
 
-/* Prismic edit link */
+/* Prismic edit link
 .wio-link
   float: right
 
 .columns.is-vertically-centered
   align-items: center
-
-@media screen and (max-width: 1087px)
-  .container.is-fluid
-    margin-left: 32px
-    margin-right: 32px
-    max-width: none
-    width: auto
 
 .nav-columns
   background: #fff
@@ -41,26 +34,34 @@ html, body
 .navbar-search form
   margin: 0
 
+article p
+  line-height: 2.4rem
+
 .icon
   &.is-small
     svg
       height: 1rem
       max-width: 1rem
+
   &.has-text-primary
     svg
       fill: $primary
+
   svg.inline-icon
     display: inline-block
     font-size: inherit
     height: 1.5rem
     overflow: visible
-    vertical-align: -.125em
+    vertical-align: -0.125em
+
     &.is-small
       height: 1rem
       max-width: 1rem
+
     &.is-medium
       height: 2rem
       max-width: 2rem
+
     &.is-large
       height: 3rem
       max-width: 3rem
@@ -69,12 +70,13 @@ html, body
   color: #0a0a0a
 
 .logo
-  padding: 1.4rem 1.4rem .65rem
+  padding: 1.4rem 1.4rem 0.65rem
   display: flex
   justify-content: center
   align-items: center
   font-size: 2rem
   font-weight: 700
+
   > .icon
     height: 2.6rem
     width: 2.6rem
@@ -82,6 +84,7 @@ html, body
 
 .main-content
   padding-top: 2rem
+
   hr
     background-color: #efefef
     border: none
@@ -89,26 +92,50 @@ html, body
     height: 2px
     margin: 1.5rem 0
 
+@media screen and (max-width: 1087px)
+  .nav-columns
+    padding: 0 1.25rem
+
+  .main-content
+    padding-top: 0.75rem
+
+  .search-title
+    padding: 0.75rem 0.75rem 0
+
 h1.title
   font-size: 4rem
   font-weight: 400
+
   span.author
     display: block
     font-size: 1.3rem
     font-style: italic
-    margin-top: .6rem
+    margin-top: 0.6rem
 
-.tile .title
-  font-family: 'Open Sans', sans-serif
+article .title
+  font-family: "Open Sans", sans-serif
   font-weight: 700
   color: #aaa
-  font-size: .8rem
-  letter-spacing: .08rem
+  font-size: 0.8rem
+  letter-spacing: 0.08rem
   text-transform: uppercase
+
+.recipe-right, .recipe-left
+  padding: 0.75rem
+  width: 100%
+
+@media screen and (min-width: 769px)
+  .recipe-right
+    float: right
+    width: 66.66667%
+
+  .recipe-left
+    float: left
+    width: 33.33333%
 
 .card.recipe .title
   display: block
-  margin-bottom: .8rem
+  margin-bottom: 0.8rem
 
 .recipe-name
   position: relative
@@ -116,10 +143,13 @@ h1.title
   background-position: center center
   background-size: 500px
   background-color: #1c2023
+
   &.has-image
     background-size: cover
+
   > .hero-body
     margin-top: 4rem
+
   .title
     width: 60%
     background: #fff
@@ -128,6 +158,7 @@ h1.title
 @media screen and (max-width: 768px)
   .recipe-name .title
     width: 100%
+    font-size: 2.6rem
 
 .recipe-detail
   background: #fff
@@ -145,7 +176,7 @@ p.note
 
 p.oven-temp
   .icon
-    margin-right: .4rem
+    margin-right: 0.4rem
     display: inline-block
 
 .ingredient-heading
@@ -155,17 +186,20 @@ ul.ingredients
   list-style: none
   list-style-type: none
   margin: 0
+
   li
-    margin-bottom: .6em
+    margin-bottom: 0.6em
+
     &.ingredient-heading
       font-weight: 700
       margin-bottom: 0
 
 span.query
-  font-family: 'Open Sans', sans-serif
+  font-family: "Open Sans", sans-serif
   font-weight: 400
 
 p.no-results
   font-size: 1.6rem
+
   i
-    margin-right: .8rem
+    margin-right: 0.8rem

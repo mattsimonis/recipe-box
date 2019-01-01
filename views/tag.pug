@@ -1,7 +1,7 @@
 extends ./layout.pug
 
 block body
-  p.title= "Recipes tagged with: "
+  p.title.search-title= "Recipes tagged with: "
     span.query= tag
   hr
   if recipes.length > 0

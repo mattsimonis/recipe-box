@@ -2,7 +2,10 @@ extends ./layout.pug
 
 block variables
   title= PrismicDOM.RichText.asText(recipe.data.name)
-  - var recipeImageUrl = recipe.data.image.url || "/images/background.png";
+  -
+    var recipeImageUrl = recipe.data.image.url || "/images/background.png"
+    var showDescription = (recipe.data.description && recipe.data.description.length)
+      || (recipe.data.note && recipe.data.note.length > 0)
 
 block body
   div.hero.recipe-name(class=(recipe.data.image.url ? "has-image" : ""), style={"background-image": `url(${recipeImageUrl})`})
@@ -11,31 +14,39 @@ block body
         h1.title= PrismicDOM.RichText.asText(recipe.data.name)
           if recipe.data.author && recipe.data.author.length > 0
             span.author!= `Author: ${recipe.data.author}`
-  article.recipe-detail(data-wio-id=recipe.id)
-    div.tile.is-ancestor
-      div.tile.is-parent
-        article.tile.is-child
-          div.content
-            if recipe.data.serving_size
-              p.serving-size.has-text-primary.is-marginless= recipe.data.serving_size
-            if recipe.data.oven_temperature
-              p.oven-temp
-                span.icon.is-small
-                  svg.inline-icon.is-small
-                    use(xlink:href="/images/cooking-icons.svg#oven")
-                span= `${recipe.data.oven_temperature}°`
-            p.title= "Ingredients"
+  article.is-clearfix.recipe-detail(data-wio-id=recipe.id)
+    if showDescription
+      div.recipe-right
+        article
+          div.collapsible
+            input(type="checkbox", name="collapsible-select", checked="checked")
+            i
+            .title.collapsible-heading.is-unselectable= "Description"
             div.content
-              include ../includes/ingredients.pug
-      div.tile.is-vertical.is-8
-        div.tile.is-parent
-          article.tile.is-child
-            div.content
-              if recipe.data.description && recipe.data.description.length > 0
-                p.title= "Description"
-                != PrismicDOM.RichText.asHtml(recipe.data.description, ctx.linkResolver)
+              != PrismicDOM.RichText.asHtml(recipe.data.description, ctx.linkResolver)
               if recipe.data.note && recipe.data.note.length > 0
                 p.note.has-text-primary= `Note: ${recipe.data.note}`
-              p.title= "Method"
-              div.content
-                include ../includes/instructions.pug
+    div.recipe-left
+      article.content
+        if recipe.data.serving_size
+          p.serving-size.has-text-primary.is-marginless= recipe.data.serving_size
+        if recipe.data.oven_temperature
+          p.oven-temp
+            span.icon.is-small
+              svg.inline-icon.is-small
+                use(xlink:href="/images/cooking-icons.svg#oven")
+            span= `${recipe.data.oven_temperature}°`
+        div.collapsible
+          input(type="checkbox", name="collapsible-select", checked="checked")
+          i
+          .title.collapsible-heading.is-unselectable= "Ingredients"
+          div.content
+            include ../includes/ingredients.pug
+    div.recipe-right
+      article.content
+        div.collapsible
+          input(type="checkbox", name="collapsible-select", checked="checked")
+          i
+          .title.collapsible-heading.is-unselectable= "Method"
+          div.content
+            include ../includes/instructions.pug
