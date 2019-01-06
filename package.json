@@ -40,6 +40,7 @@
     "prismic-dom": "^2.1.0",
     "prismic-javascript": "^2.0.1",
     "pug": "^2.0.3",
+    "qs": "^6.6.0",
     "serve-favicon": "^2.5.0"
   }
 }

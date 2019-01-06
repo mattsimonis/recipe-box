@@ -1,0 +1,6 @@
+if pagination.nextPageUrl || pagination.prevPageUrl
+  div.pagination.pagination.is-centered
+    if pagination.prevPageUrl
+      a.pagination-previous(href=pagination.prevPageUrl)= "Previous"
+    if pagination.nextPageUrl
+      a.pagination-next(href=pagination.nextPageUrl)= "Next page"

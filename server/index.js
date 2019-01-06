@@ -3,6 +3,7 @@ const PrismicDOM = require('prismic-dom');
 const PrismicConfig = require('./prismic-configuration');
 const app = require('../config');
 const cache = require('./cache');
+const Pagination = require('./pagination');
 
 const ALLOW_PREVIEW = process.env.PRISMIC_PREVIEW === 'true';
 const WEBHOOK_SECRET = process.env.PRISMIC_WEBHOOK_SECRET;
@@ -53,10 +54,15 @@ module.exports = (() => {
   app.route('/').get((req, res) => {
     req.prismic.api.query(
       Prismic.Predicates.at('document.type', 'recipe'),
-      { orderings: '[document.first_publication_date desc]' },
+      {
+        page: req.query.page || 1,
+        orderings: '[document.first_publication_date desc]',
+      },
     ).then((response) => {
       const recipes = response.results;
-      res.render('index', { recipes });
+      const pagination = new Pagination(req, response)
+          .getUrls();
+      res.render('index', { recipes, pagination });
     });
   });
 
@@ -78,10 +84,12 @@ module.exports = (() => {
 
     req.prismic.api.query(
       Prismic.Predicates.fulltext('my.recipe.name', q),
-      { page: req.query.page || 1 },
+      { page: req.query.page || 1, pageSize: 1 },
     ).then((response) => {
       const recipes = response.results;
-      res.render('search', { recipes, q });
+      const pagination = new Pagination(req, response)
+          .getUrls();
+      res.render('search', { recipes, q, pagination });
     });
   });
 
@@ -92,7 +100,9 @@ module.exports = (() => {
       Prismic.Predicates.at('document.tags', [tag]),
     ).then((response) => {
       const recipes = response.results;
-      res.render('tag', { recipes, tag });
+      const pagination = new Pagination(req, response)
+          .getUrls();
+      res.render('tag', { recipes, tag, pagination });
     });
   });
 
