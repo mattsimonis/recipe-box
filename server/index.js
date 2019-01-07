@@ -84,7 +84,7 @@ module.exports = (() => {
 
     req.prismic.api.query(
       Prismic.Predicates.fulltext('my.recipe.name', q),
-      { page: req.query.page || 1, pageSize: 1 },
+      { page: req.query.page || 1 },
     ).then((response) => {
       const recipes = response.results;
       const pagination = new Pagination(req, response)
