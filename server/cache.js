@@ -1,4 +1,4 @@
-const memcached = require('memcached');
+const memcached = require("memcached");
 
 const server = process.env.MEMCACHE_SERVERS;
 const client = server ? new memcached(server) : null;
@@ -10,16 +10,16 @@ module.exports = {
     }
 
     app.use((req, res, next) => {
-      const viewKey = 'view_cache_' + req.originalUrl || req.url;
+      const viewKey = "view_cache_" + req.originalUrl || req.url;
       client.get(viewKey, (err, value) => {
         if (err == null && value != null) {
-          res.send(value.toString('utf8'));
+          res.send(value.toString("utf8"));
           return;
         }
         res.sendRes = res.send;
-        res.send = (body) => {
+        res.send = body => {
           process.stdout.write(`setting cache for ${viewKey}\n`);
-          client.set(viewKey, body, 3600, (err) => {
+          client.set(viewKey, body, 3600, err => {
             if (err) {
               process.stdout.write(`error setting cache for ${viewKey}\n`);
             } else {
@@ -46,7 +46,7 @@ module.exports = {
       if (!client) {
         resolve(null);
       }
-  
+
       client.get(key, (err, value) => {
         if (err == null && value != null) {
           resolve(value);
@@ -62,7 +62,7 @@ module.exports = {
       return;
     }
 
-    client.set(key, document, 3600, (err) => {
+    client.set(key, document, 3600, err => {
       if (err) {
         process.stdout.write(`error setting cache for ${key}\n`);
       } else {
@@ -70,4 +70,4 @@ module.exports = {
       }
     });
   }
-}
+};

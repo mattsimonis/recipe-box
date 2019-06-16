@@ -1,25 +1,24 @@
-block variables
-
 doctype html
 html(lang="en")
-  head
-    - var title = title || homepage ? PrismicDOM.RichText.asText(homepage.data.title) : "Recipe Box"
-    title #{title}
-    link(rel="icon", href="/favicon.ico")
-    link(async, rel="stylesheet", href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i|Crimson+Text:400,400i,700,700i")
-    link(rel="stylesheet", href="/styles/app.css")
-    meta(name="viewport", content="width=device-width, initial-scale=1")
+block variables
+  - var title = title || (homepage ? PrismicDOM.RichText.asText(homepage.data.title) : "Recipe Box")
+head
+  title #{title}
+  link(rel="icon", href="/favicon.ico")
+  link(async, rel="stylesheet" href="https://use.typekit.net/egd1fzm.css")
+  //link(async, rel="stylesheet" href="https://use.typekit.net/rfm6ipa.css")
+  link(rel="stylesheet", href="/styles/app.css")
+  meta(name="viewport", content="width=device-width, initial-scale=1")
 
-    if AllowPreview
-      // Required for Previews and Experiments
-      script
-        = ctx ? "window.prismic = { endpoint: '" + ctx.endpoint + "' };" : ""
-      script(async, src="//static.cdn.prismic.io/prismic.min.js")
-  body
-    include ../includes/navbar.pug
+  if AllowPreview
+    // Required for Previews and Experiments
+    script
+      = ctx ? "window.prismic = { endpoint: '" + ctx.endpoint + "' };" : ""
+    script(async, src="//static.cdn.prismic.io/prismic.min.js")
+body
+  include ../includes/navbar.pug
 
-    div.container
-      div.main-content
-        block body
 
-    block scripts
+  block body
+
+  block scripts

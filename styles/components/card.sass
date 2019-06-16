@@ -1,0 +1,27 @@
+.card
+  border-radius: 15px
+  box-shadow: 0 30px 60px 0 rgba(130, 136, 171, 0.16)
+
+  .card-image .image
+    border-radius: 15px 15px 0 0
+    overflow: hidden
+
+    img
+      transition: transform 0.5s
+      transform: rotate(0deg) scale3d(1, 1, 1)
+
+  &:hover
+    .card-image .image img
+      transform: rotate(-1deg) scale3d(1.1, 1.1, 1)
+
+  .title
+    font-family: freight-big-pro, serif
+    line-height: 1rem
+
+  .tags
+    margin-top: 0.75rem
+
+    .tag
+      &:hover
+        animation: jelly 0.5s
+        text-decoration: none

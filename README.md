@@ -19,7 +19,7 @@ Demo: [https://secret-citadel-18285.herokuapp.com/](https://secret-citadel-18285
 
 ## Requirements
 
-- Node.js v11+
+- Node.js v10+
 - npm v6+
 
 ## How to launch this project in your local environment
@@ -72,7 +72,7 @@ echo "PRISMIC_REPOSITORY=your-repository-name" > .env
 
 - `MEMCACHE_SERVERS` - The memcached server to connect to. Should be a comma separated list of [hostname:port] (e.g. `MEMCACHE_SERVERS=localhost:11211`).
 - `PRISMIC_PREVIEW` - If set to `true`, the `/preview` endpoint will be accessible and the client-side [prismic.min.js](https://static.cdn.prismic.io/prismic.min.js) script will be added to the `layout` view.
-- `PRISMIC_WEBHOOK_SECRET` - The value of the secret key set in the prismic repository configuration. If set, and when prismic is configured with a webhook to your app's `/webhook` endpoint, this will clear out the cache, if set.
+- `PRISMIC_WEBHOOK_SECRET` - The value of the secret key set in the prismic repository configuration. If set, and when prismic is configured with a webhook to your app's `/webhook` endpoint, this will clear out the cache.
 
 ## Deployment
 

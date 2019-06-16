@@ -1,8 +1,9 @@
 extends ./layout.pug
 
 block body
-  div.columns.is-multiline
-    each recipe in recipes
-      div.column.is-one-third
-        include ../includes/recipe-card.pug
-  include ../includes/pagination.pug
+  div.container
+    div.columns.is-multiline
+      each recipe in recipes
+        div.column.is-one-third
+          include ../includes/recipe-card.pug
+    include ../includes/pagination.pug

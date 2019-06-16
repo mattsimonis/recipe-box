@@ -6,7 +6,7 @@ div.card.recipe
   div.card-content
     a.title.is-4(href=`/recipe/${recipe.uid}`)
       = PrismicDOM.RichText.asText(recipe.data.name)
-    if recipe.tags
+    if recipe.tags && recipe.tags.length > 0
       div.tags
         each tag in recipe.tags
           a.tag(href=`/tag/${tag}`)= tag

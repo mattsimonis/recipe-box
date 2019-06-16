@@ -1,5 +1,5 @@
-const querystring = require('querystring');
-const url = require('url');
+const querystring = require("querystring");
+const url = require("url");
 
 module.exports = class Pagination {
   constructor(req, response) {
@@ -21,9 +21,12 @@ module.exports = class Pagination {
       return null;
     }
 
-    let params = Object.assign({}, this.query);
+    const params = Object.assign({}, this.query);
     params.page = page;
 
-    return url.parse(this.currentUrl).pathname + '?' + querystring.stringify(params);
+    const path = url.parse(this.currentUrl).pathname;
+    const parsedQueryString = querystring.stringify(params);
+
+    return `${path}?${parsedQueryString}`;
   }
-}
+};

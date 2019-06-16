@@ -1,0 +1,123 @@
+article p
+  line-height: 2.4rem
+
+.nav-columns a
+  color: #0a0a0a
+
+.main-content
+  padding-top: 2rem
+
+  hr
+    background-color: #efefef
+    border: none
+    display: block
+    height: 2px
+    margin: 1.5rem 0
+
+@media screen and (max-width: 1087px)
+  .main-content
+    padding-top: 0.75rem
+
+  .search-title
+    padding: 0.75rem 0.75rem 0
+
+h1.title
+  font-size: 4rem
+  font-family: 'Playfair Display', serif
+
+  span.author
+    display: block
+    font-size: 1.3rem
+    font-style: italic
+    margin-top: 0.6rem
+
+article .title
+  font-weight: 700
+  color: #aaa
+  font-size: 0.8rem
+  letter-spacing: 0.08rem
+  text-transform: uppercase
+
+.recipe-right, .recipe-left
+  padding: 0.75rem
+  width: 100%
+
+@media screen and (min-width: 769px)
+  .recipe-right
+    float: right
+    width: 66.66667%
+
+  .recipe-left
+    float: left
+    width: 33.33333%
+
+.card.recipe .title
+  display: block
+  margin-bottom: 0.8rem
+
+.recipe-name
+  position: relative
+  overflow: hidden
+  background-position: center center
+  background-size: 500px
+  background-color: #1c2023
+
+  &.has-image
+    background-size: cover
+
+  > .hero-body
+    margin-top: 4rem
+
+  .title
+    width: 60%
+    background: #fff
+    padding: 1rem
+
+@media screen and (max-width: 768px)
+  .recipe-name .title
+    width: 100%
+    font-size: 2.6rem
+
+.recipe-detail
+  background: #fff
+  padding: 1.25rem
+  display: block
+  box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1)
+  color: #4a4a4a
+
+p.serving-size
+  font-weight: 700
+
+p.note
+  font-style: italic
+  font-weight: 700
+
+p.oven-temp
+  .icon
+    margin-right: 0.4rem
+    display: inline-block
+
+.ingredient-heading
+  font-weight: 700
+
+ul.ingredients
+  list-style: none
+  list-style-type: none
+  margin: 0
+
+  li
+    margin-bottom: 0.6em
+
+    &.ingredient-heading
+      font-weight: 700
+      margin-bottom: 0
+
+span.query
+  font-family: sofia-pro, sans-serif
+  font-weight: 400
+
+p.no-results
+  font-size: 1.6rem
+
+  i
+    margin-right: 0.8rem
