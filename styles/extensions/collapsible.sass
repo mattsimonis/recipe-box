@@ -1,5 +1,6 @@
 .collapsible
   position: relative
+
   input[name='collapsible-select']
     display: none
     position: absolute
@@ -8,14 +9,18 @@
     height: 100%
     z-index: 1
     opacity: 0
+
     &:checked
-      &~.content
+      & ~ .content
         display: block
-      &~i
+
+      & ~ i
         &:before
           transform: translate(2px, 0) rotate(-45deg)
+
         &:after
           transform: translate(-2px, 0) rotate(45deg)
+
   .content
     position: relative
     overflow: hidden
@@ -25,22 +30,24 @@
   .collapsible
     input[name='collapsible-select']
       display: block
+
     i
       position: absolute
       transform: translate(-6px, 0)
       right: 0
+
       &:before, &:after
-        content: ''
+        content: ""
         position: absolute
         background-color: #aaa
         width: 3px
         height: 9px
+
       &:before
         transform: translate(-2px, 0) rotate(-45deg)
+
       &:after
         transform: translate(2px, 0) rotate(45deg)
+
     .content
       display: none
-
-.collapsible-heading
-  background-color: $white

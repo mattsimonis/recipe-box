@@ -3,21 +3,35 @@
   background-position: center center
   background-size: 500px
   background-color: $text
-  border-radius: 15px
-  box-shadow: 0 30px 60px 0 rgba(130, 136, 171, 0.16)
   margin-bottom: 2rem
   overflow: hidden
-  font-family: $family-secondary
   min-height: 350px
 
   &.has-image
     background-size: cover
 
   .hero-body
-    padding: 2rem
+    padding: $card-content-padding
     display: flex
-    background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.25))
 
     .title
-      color: #fff
+      color: #535353
+      background-color: #ffffff
+      border-radius: $card-border-radius
+      padding: 1.5rem 1.5rem 0.75rem
       align-self: flex-end
+      font-size: 2.4rem
+
+.recipe
+  font-size: 1rem
+  letter-spacing: 0.5px
+
+  p
+    margin-top: 1rem
+
+h3.section-title
+  font-family: $family-secondary
+  font-weight: 600
+  font-size: 1.125rem
+  line-height: 1.22
+  letter-spacing: 1px

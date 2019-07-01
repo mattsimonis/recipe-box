@@ -22,8 +22,8 @@
     "npm": "6.x"
   },
   "devDependencies": {
-    "babel-eslint": "^10.0.1",
-    "eslint": "^5.16.0",
+    "babel-eslint": "^10.0.2",
+    "eslint": "^6.0.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.17.3",
     "nodemon": "^1.19.1",
@@ -39,7 +39,7 @@
     "node-sass-middleware": "^0.11.0",
     "prismic-dom": "^2.1.0",
     "prismic-javascript": "^2.0.3",
-    "pug": "^2.0.3",
+    "pug": "^2.0.4",
     "qs": "^6.7.0",
     "serve-favicon": "^2.5.0"
   }
