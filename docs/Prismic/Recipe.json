@@ -1,106 +1,106 @@
 {
-  "Main" : {
-    "uid" : {
-      "type" : "UID",
-      "config" : {
-        "label" : "URL",
-        "placeholder" : "chewy-chocolate-chip-cookies"
+  "Main": {
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "URL",
+        "placeholder": "chewy-chocolate-chip-cookies"
       }
     },
-    "name" : {
-      "type" : "StructuredText",
-      "config" : {
-        "single" : "heading1",
-        "label" : "Name",
-        "placeholder" : "Chewy Chocolate Chip Cookies"
+    "name": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1",
+        "label": "Name",
+        "placeholder": "Chewy Chocolate Chip Cookies"
       }
     },
-    "image" : {
-      "type" : "Image",
-      "config" : {
-        "constraint" : { },
-        "thumbnails" : [ ],
-        "label" : "image"
+    "image": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "image"
       }
     },
-    "author" : {
-      "type" : "Text",
-      "config" : {
-        "label" : "Author",
-        "placeholder" : "Jacques Pépin"
+    "author": {
+      "type": "Text",
+      "config": {
+        "label": "Author",
+        "placeholder": "Jacques Pépin"
       }
     },
-    "description" : {
-      "type" : "StructuredText",
-      "config" : {
-        "multi" : "paragraph, strong, em",
-        "label" : "Description",
-        "placeholder" : "The most ooey gooey chocolate chip cookies."
+    "description": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph, strong, em",
+        "label": "Description",
+        "placeholder": "The most ooey gooey chocolate chip cookies."
       }
     },
-    "note" : {
-      "type" : "Text",
-      "config" : {
-        "label" : "Note",
-        "placeholder" : "You can optionally add walnuts."
+    "note": {
+      "type": "Text",
+      "config": {
+        "label": "Note",
+        "placeholder": "You can optionally add walnuts."
       }
     },
-    "serving_size" : {
-      "type" : "Text",
-      "config" : {
-        "label" : "Serving Size",
-        "placeholder" : "Makes 12 cookies"
+    "serving_size": {
+      "type": "Text",
+      "config": {
+        "label": "Serving Size",
+        "placeholder": "Makes 12 cookies"
       }
     },
-    "oven_temperature" : {
-      "type" : "Number",
-      "config" : {
-        "label" : "Oven Temperature",
-        "placeholder" : "350"
+    "oven_temperature": {
+      "type": "Number",
+      "config": {
+        "label": "Oven Temperature",
+        "placeholder": "350"
       }
     }
   },
-  "Ingredients" : {
-    "body" : {
-      "type" : "Slices",
-      "fieldset" : "Slice zone",
-      "config" : {
-        "choices" : {
-          "ingredients_group" : {
-            "type" : "Slice",
-            "fieldset" : "Ingredients Group",
-            "description" : "A grouping of ingredients with optional title.",
-            "icon" : "receipt",
-            "display" : "list",
-            "non-repeat" : {
-              "heading" : {
-                "type" : "Text",
-                "config" : {
-                  "label" : "Heading",
-                  "placeholder" : "Dough"
+  "Ingredients": {
+    "body": {
+      "type": "Slices",
+      "fieldset": "Slice zone",
+      "config": {
+        "choices": {
+          "ingredients_group": {
+            "type": "Slice",
+            "fieldset": "Ingredients Group",
+            "description": "A grouping of ingredients with optional title.",
+            "icon": "receipt",
+            "display": "list",
+            "non-repeat": {
+              "heading": {
+                "type": "Text",
+                "config": {
+                  "label": "Heading",
+                  "placeholder": "Dough"
                 }
               }
             },
-            "repeat" : {
-              "quantity" : {
-                "type" : "Text",
-                "config" : {
-                  "label" : "Quantity",
-                  "placeholder" : "4"
+            "repeat": {
+              "quantity": {
+                "type": "Text",
+                "config": {
+                  "label": "Quantity",
+                  "placeholder": "4"
                 }
               },
-              "measurement" : {
-                "type" : "Text",
-                "config" : {
-                  "label" : "Measurement",
-                  "placeholder" : "cups"
+              "measurement": {
+                "type": "Text",
+                "config": {
+                  "label": "Measurement",
+                  "placeholder": "cups"
                 }
               },
-              "ingredient" : {
-                "type" : "Text",
-                "config" : {
-                  "label" : "Ingredient",
-                  "placeholder" : "flour"
+              "ingredient": {
+                "type": "Text",
+                "config": {
+                  "label": "Ingredient",
+                  "placeholder": "flour"
                 }
               }
             }
@@ -109,21 +109,21 @@
       }
     }
   },
-  "Instructions" : {
-    "instructions" : {
-      "type" : "Group",
-      "config" : {
-        "fields" : {
-          "step" : {
-            "type" : "StructuredText",
-            "config" : {
-              "single" : "strong, em",
-              "label" : "Step",
-              "placeholder" : "Mix the flour, sugar, and baking soda in a medium bowl."
+  "Instructions": {
+    "instructions": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "step": {
+            "type": "StructuredText",
+            "config": {
+              "single": "strong, em",
+              "label": "Step",
+              "placeholder": "Mix the flour, sugar, and baking soda in a medium bowl."
             }
           }
         },
-        "label" : "Instructions"
+        "label": "Instructions"
       }
     }
   }

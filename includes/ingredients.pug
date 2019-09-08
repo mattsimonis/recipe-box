@@ -1,12 +1,12 @@
 each slice in recipe.data.body
   if slice.slice_type === "ingredients_group"
     if slice.primary.heading
-      div.ingredient-heading= slice.primary.heading
-    ul.ingredients
+      h4.ingredient-heading= slice.primary.heading
+    ul
       each ingredient in slice.items
-        li.ingredient
+        li
           if ingredient.quantity
-            span.quantity= `${ingredient.quantity} `
+            span= `${ingredient.quantity} `
           if ingredient.measurement
-            span.measurement= `${ingredient.measurement} `
-          span.ingredient= ingredient.ingredient
+            span= `${ingredient.measurement} `
+          span= ingredient.ingredient

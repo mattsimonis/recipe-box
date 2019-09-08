@@ -6,7 +6,6 @@ head
   title #{title}
   link(rel="icon", href="/favicon.ico")
   link(async, rel="stylesheet" href="https://use.typekit.net/egd1fzm.css")
-  //link(async, rel="stylesheet" href="https://use.typekit.net/rfm6ipa.css")
   link(rel="stylesheet", href="/styles/app.css")
   meta(name="viewport", content="width=device-width, initial-scale=1")
 
@@ -15,10 +14,11 @@ head
     script
       = ctx ? "window.prismic = { endpoint: '" + ctx.endpoint + "' };" : ""
     script(async, src="//static.cdn.prismic.io/prismic.min.js")
+  
+  if homepage && homepage.data.primary_color
+    style(type='text/css').
+      :root { --highlight-color: #{homepage.data.primary_color}; }
 body
   include ../includes/navbar.pug
-
-
   block body
-
   block scripts

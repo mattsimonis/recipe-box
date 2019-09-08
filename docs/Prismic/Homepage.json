@@ -1,36 +1,129 @@
 {
-  "Main" : {
-    "icon" : {
-      "type" : "Select",
-      "config" : {
-        "options" : [ "apple", "banana", "bread", "buns", "carrot", "cheese", "colander", "cookbook", "croissant", "cupcake", "cuttingboard", "eggplant", "fish", "fish2", "fishfilet", "friedegg", "fries", "garlic", "gingerbreadcookie", "ham", "hamburger", "hardboiledegg", "herbpot", "hotdog", "hotmeal", "hotsoup", "icecreamcone", "jar", "kebab", "measuringcup", "muffin", "mushroom", "mushroom2", "orangeslice", "pizza", "pot", "recipe", "saltshaker", "sausage", "servingplatter", "spatula", "spoon", "steak", "sundae", "taco", "tomato", "tropicaldrink", "turkey", "watermelon", "whisk" ],
-        "default_value" : "apple",
-        "label" : "Icon"
+  "Main": {
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "URL",
+        "placeholder": "chewy-chocolate-chip-cookies"
       }
     },
-    "title" : {
-      "type" : "StructuredText",
-      "config" : {
-        "single" : "heading1",
-        "label" : "Title",
-        "placeholder" : "The Cookie Corner"
+    "name": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1",
+        "label": "Name",
+        "placeholder": "Chewy Chocolate Chip Cookies"
       }
     },
-    "subtitle" : {
-      "type" : "StructuredText",
-      "config" : {
-        "single" : "heading3",
-        "label" : "Subtitle",
-        "placeholder" : "My favorite cookie recipes"
+    "image": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "image"
       }
     },
-    "description" : {
-      "type" : "StructuredText",
-      "config" : {
-        "multi" : "paragraph, strong, em, hyperlink, image, list-item, o-list-item",
-        "allowTargetBlank" : true,
-        "label" : "Description",
-        "placeholder" : "I love cookies. This collection contains my most favorite cookie recipes! 🤤🍪"
+    "author": {
+      "type": "Text",
+      "config": {
+        "label": "Author",
+        "placeholder": "Jacques Pépin"
+      }
+    },
+    "description": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph, strong, em",
+        "label": "Description",
+        "placeholder": "The most ooey gooey chocolate chip cookies."
+      }
+    },
+    "note": {
+      "type": "Text",
+      "config": {
+        "label": "Note",
+        "placeholder": "You can optionally add walnuts."
+      }
+    },
+    "serving_size": {
+      "type": "Text",
+      "config": {
+        "label": "Serving Size",
+        "placeholder": "Makes 12 cookies"
+      }
+    },
+    "oven_temperature": {
+      "type": "Number",
+      "config": {
+        "label": "Oven Temperature",
+        "placeholder": "350"
+      }
+    }
+  },
+  "Ingredients": {
+    "body": {
+      "type": "Slices",
+      "fieldset": "Slice zone",
+      "config": {
+        "choices": {
+          "ingredients_group": {
+            "type": "Slice",
+            "fieldset": "Ingredients Group",
+            "description": "A grouping of ingredients with optional title.",
+            "icon": "receipt",
+            "display": "list",
+            "non-repeat": {
+              "heading": {
+                "type": "Text",
+                "config": {
+                  "label": "Heading",
+                  "placeholder": "Dough"
+                }
+              }
+            },
+            "repeat": {
+              "quantity": {
+                "type": "Text",
+                "config": {
+                  "label": "Quantity",
+                  "placeholder": "4"
+                }
+              },
+              "measurement": {
+                "type": "Text",
+                "config": {
+                  "label": "Measurement",
+                  "placeholder": "cups"
+                }
+              },
+              "ingredient": {
+                "type": "Text",
+                "config": {
+                  "label": "Ingredient",
+                  "placeholder": "flour"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "Instructions": {
+    "instructions": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "step": {
+            "type": "StructuredText",
+            "config": {
+              "single": "strong, em",
+              "label": "Step",
+              "placeholder": "Mix the flour, sugar, and baking soda in a medium bowl."
+            }
+          }
+        },
+        "label": "Instructions"
       }
     }
   }

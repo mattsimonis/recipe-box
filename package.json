@@ -14,33 +14,29 @@
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "lint": "eslint *.js",
-    "test": "node -c *.js"
+    "lint": "eslint *.js"
   },
   "engines": {
     "node": "10.x",
     "npm": "6.x"
   },
   "devDependencies": {
-    "babel-eslint": "^10.0.2",
-    "eslint": "^6.0.1",
-    "eslint-config-airbnb-base": "^13.2.0",
-    "eslint-plugin-import": "^2.18.0",
-    "nodemon": "^1.19.1",
-    "prettier-eslint": "^9.0.0"
+    "eslint": "^6.3.0",
+    "nodemon": "^1.19.2",
+    "prettier": "^1.18.2"
   },
   "dependencies": {
     "bulma": "^0.7.5",
     "compression": "^1.7.4",
-    "dotenv": "^8.0.0",
+    "dotenv": "^8.1.0",
     "express": "^4.17.1",
     "memcached": "^2.2.2",
     "node-sass": "^4.12.0",
     "node-sass-middleware": "^0.11.0",
     "prismic-dom": "^2.1.0",
-    "prismic-javascript": "^2.0.3",
+    "prismic-javascript": "^2.1.1",
     "pug": "^2.0.4",
-    "qs": "^6.7.0",
+    "qs": "^6.8.0",
     "serve-favicon": "^2.5.0"
   }
 }
