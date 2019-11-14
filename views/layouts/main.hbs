@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Recipe Box</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Radley&display=swap">
+    <link rel="stylesheet" href="/styles/app.css">
+    {{#if homepage.data.primary_color}}
+      <style type="text/css">
+        :root { --highlight-color: {{homepage.data.primary_color}}; }
+      </style>
+    {{/if}}
+  </head>
+  <body>
+
+    {{> navbar}}
+    {{{body}}}
+
+    {{#if allowPreview}}
+      <script>
+        window.prismic = { endpoint: '{{ctx.endpoint}}' };
+      </script>
+      <script src="//static.cdn.prismic.io/prismic.min.js" async></script>
+    {{/if}}
+  </body>
+</html>

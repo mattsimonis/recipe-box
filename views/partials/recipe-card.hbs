@@ -1,0 +1,23 @@
+<div class="card recipe">
+  {{#if data.image}}
+    <div class="card-image">
+      <a class="image" href="/recipe/{{uid}}">
+        <img src="{{data.image.url}}" />
+      </a>
+    </div>
+  {{/if}}
+  <div class="card-content">
+    <a class="title is-4" href="/recipe/{{uid}}">
+      {{{richTextAsText data.name}}}
+    </a>
+    {{#if tags}}
+      <div class="tags">
+        {{#each tags}}
+          <a class="tag" href="tag/{{this}}">
+            {{this}}
+          </a>
+        {{/each}}
+      </div>
+    {{/if}}
+  </div>
+</div>

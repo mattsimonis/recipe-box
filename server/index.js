@@ -17,10 +17,10 @@ module.exports = (() => {
     };
 
     // Add PrismicDOM in locals to access them in templates.
-    res.locals.PrismicDOM = PrismicDOM;
+    res.locals.prismicDOM = PrismicDOM;
 
     // Expose preview configuration.
-    res.locals.AllowPreview = ALLOW_PREVIEW;
+    res.locals.allowPreview = ALLOW_PREVIEW;
 
     // Set up prismic api.
     Prismic.api(PrismicConfig.apiEndpoint, {
@@ -61,14 +61,19 @@ module.exports = (() => {
       .then(response => {
         const recipes = response.results;
         const pagination = new Pagination(req, response).getUrls();
-        res.render("index", { recipes, pagination });
+        const title = PrismicDOM.RichText.asText(
+          res.locals.homepage.data.title
+        );
+        res.render("index", { title, recipes, pagination });
       });
   });
 
   // Recipe detail reoute.
   app.route("/recipe/:uid").get((req, res) => {
     req.prismic.api.getByUID("recipe", req.params.uid).then(recipe => {
-      res.render("recipe", { recipe });
+      const title = PrismicDOM.RichText.asText(recipe.data.name);
+      const recipeImageUrl = recipe.data.image.url || "/images/background.png";
+      res.render("recipe", { title, recipe, recipeImageUrl });
     });
   });
 

@@ -1,12 +1,5 @@
 extends ./layout.pug
 
-block variables
-  -
-    var title = PrismicDOM.RichText.asText(recipe.data.name)
-    var recipeImageUrl = recipe.data.image.url || "/images/background.png"
-    var showDescription = (recipe.data.description && recipe.data.description.length > 0)
-      || (recipe.data.note && recipe.data.note.length > 0)
-
 block body
   div.container
     div.hero.box.recipe-name(class=(recipe.data.image.url ? "has-image" : ""), style={"background-image": `url(${recipeImageUrl})`})
@@ -26,9 +19,9 @@ block body
           h3.section-title='Ingredients'
           include ../includes/ingredients.pug
         div.column
-          if showDescription
+          if recipe.data.description && recipe.data.description.length > 0
             != PrismicDOM.RichText.asHtml(recipe.data.description, ctx.linkResolver)
-            if recipe.data.note && recipe.data.note.length > 0
-              p.note.has-text-primary= `Note: ${recipe.data.note}`
+          if recipe.data.note && recipe.data.note.length > 0
+            p.note.has-text-primary= `Note: ${recipe.data.note}`
           h3.section-title='Method'
           include ../includes/instructions.pug
